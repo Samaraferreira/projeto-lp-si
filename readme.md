@@ -5,7 +5,9 @@
 pip install -r requirement.txt
 uvicorn app.main:app --reload
 ```
-
+```
+> Acesse o swagger: http://127.0.0.1:8000/docs
+```
 # [Regras de negócio]
 ![Tabelas](./docs/tables.PNG)
 

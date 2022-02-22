@@ -87,4 +87,4 @@ class JobService:
             list.append(job)
         return list
 
-service = JobService()
+service = JobService()  # Singleton

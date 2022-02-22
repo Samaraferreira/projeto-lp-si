@@ -76,4 +76,4 @@ class DoctorService:
         return list
 
 
-service = DoctorService()
+service = DoctorService() # Singleton
