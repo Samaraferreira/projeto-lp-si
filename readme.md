@@ -1,14 +1,15 @@
 # Agendamento de plantões médicos
 
-### Run
+### Executar a aplicação
 ```bash
 pip install -r requirement.txt
 uvicorn app.main:app --reload
 ```
-```
-> Acesse o swagger: http://127.0.0.1:8000/docs
-```
-# [Regras de negócio]
+
+#### :bulb: Acesse o swagger: http://localhost:8000/docs
+<br />
+
+## [Regras de negócio]
 ![Tabelas](./docs/tables.PNG)
 
     -> Cadastro de médico
