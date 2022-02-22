@@ -1,23 +1,29 @@
 from fastapi import APIRouter
-from ..services.doctor_service import DoctorService
+from ..services.doctor_service import service
 from ..models.doctor import Doctor
 
 router = APIRouter()
 
-service = DoctorService()
-
 @router.post('/doctors', response_model=Doctor, tags=['Médicos'])
-async def createDoctor(doctor: Doctor):
+async def create_doctor(doctor: Doctor):
     return service.create(doctor)
 
-@router.get('/doctors', tags=['Médicos'])
-async def listAllDoctors():
+@router.get('/doctors', response_model=list[Doctor], tags=['Médicos'])
+async def list_all_doctors():
     return service.get_all()
 
-@router.get('/doctors/{crm}', tags=['Médicos'])
-async def getDoctorByCRM(crm):
-    return service.get_by_crm(crm)
-
-@router.get('/doctors/search', tags=['Médicos'])
-async def searchDoctorsByName(name):
+@router.get('/doctors/search', response_model=list[Doctor], tags=['Médicos'])
+async def search_doctors_by_name(name: str):
     return service.get_by_name(name)
+
+@router.get('/doctors/{crm}/unlock', tags=['Médicos'])
+async def unlock_doctor(crm: str):
+    return service.unlock_doctor(crm)
+
+@router.get('/doctors/{crm}/lock', tags=['Médicos'])
+async def lock_doctor(crm: str):
+    return service.lock_doctor(crm)
+
+@router.get('/doctors/{crm}', response_model=Doctor, tags=['Médicos'])
+async def get_doctor_by_CRM(crm: str):
+    return service.get_by_crm(crm)
