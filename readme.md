@@ -26,8 +26,8 @@ uvicorn app.main:app --reload
             - médico não está bloqueado
             - médico ainda não tem platão agendado para a data
 
-    -> Troca de médico no platão
-        * O médico que vai entrar na troca não pode ter plantão agendado para o dia e não pode estar bloqueado
+    -> Troca de médico no plantão
+        * O médico que vai entrar na troca não pode ter plantão agendado para a data e não pode estar bloqueado
 
 ### Funcionalidades
 - [x] Cadastro de médicos
